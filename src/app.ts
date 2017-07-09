@@ -2,25 +2,20 @@ import 'p2';
 import 'pixi';
 import 'phaser';
 
-window.onload = function() {
+import { Main } from './main';
 
-  //  Note that this html file is set to pull down Phaser 2.5.0 from the JS Delivr CDN.
-  //  Although it will work fine with this tutorial, it's almost certainly not the most current version.
-  //  Be sure to replace it with an updated version before you start experimenting with adding your own code.
+class App extends Phaser.Game {
+  constructor() {
+    super({
+      width: 500,
+      height: 800,
+      renderer: Phaser.AUTO
+    });
 
-  var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
-
-  function preload () {
-
-    game.load.image('logo', 'phaser.png');
-
+    this.state.add('Main', Main, true);
   }
+}
 
-  function create () {
-
-    var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
-    logo.anchor.setTo(0.5, 0.5);
-
-  }
-
+window.onload = () => {
+  new App();
 };

@@ -18,8 +18,9 @@ module.exports = {
             'phaser': phaser,
             'pixi': pixi,
             'p2': p2
-        }
-    },
+        },
+        extensions: ['.ts', '.tsx', '.js']
+},
     module: {
         loaders: [
             { test: /\.tsx?$/, loader: "ts-loader", exclude: /node_modules/ },
