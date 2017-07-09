@@ -4,7 +4,7 @@
   "description": "",
   "main": "''",
   "scripts": {
-    "start": "lite-server"
+    "start": "webpack-dev-server --open"
   },
   "author": "",
   "license": "MIT",
@@ -12,6 +12,10 @@
     "phaser-ce": "^2.8.1"
   },
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "expose-loader": "^0.7.3",
+    "ts-loader": "^2.2.2",
+    "typescript": "^2.4.1",
+    "webpack": "^3.1.0",
+    "webpack-dev-server": "^2.5.1"
   }
 }
