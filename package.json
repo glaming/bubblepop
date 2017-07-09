@@ -1,0 +1,17 @@
+{
+  "name": "bubblepop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "''",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "phaser-ce": "^2.8.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
