@@ -1,5 +1,7 @@
 import 'phaser';
 
+import { Util } from './util';
+
 enum Type {
   Red,
   Orange,
@@ -23,6 +25,15 @@ export class Bubble extends Phaser.Sprite {
     };
 
     return lookup[t];
+  }
+
+  // Taken from https://stackoverflow.com/a/44230999/2080491
+  static getRandomType(): Type {
+    let typeVals = Object.keys(Type)
+      .map(n => parseInt(n))
+      .filter(n => !isNaN(n));
+
+    return typeVals[Util.getRandomInt(0, typeVals.length)];
   }
 
   constructor(game: Phaser.Game, x: number, y: number, type: Type) {

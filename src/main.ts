@@ -1,6 +1,6 @@
 import 'phaser';
 
-import { Bubble } from './bubble';
+import { BubbleGrid } from './bubble-grid';
 
 export class Main extends Phaser.State {
 
@@ -13,12 +13,6 @@ export class Main extends Phaser.State {
     let logo = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'logo');
     logo.anchor.setTo(0.5, 0.5);
 
-    let bubble = new Bubble(this.game, this.game.world.centerX, this.game.world.centerY, Bubble.Type.Red);
-    this.game.add.existing(bubble);
-
-    bubble.inputEnabled = true;
-    bubble.events.onInputDown.add(() => {
-      bubble.pop();
-    });
+    new BubbleGrid(this.game);
   }
 }
